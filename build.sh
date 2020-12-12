@@ -8,6 +8,22 @@ source var.sh
 function build() {
   cd Pinetime/build
     make -j 2
+    /opt/mcuboot/scripts/imgtool.py                                \
+      create                                                       \
+      --align 4                                                    \
+      --version 1.0.0                                              \
+      --header-size 32                                             \
+      --slot-size 475136                                           \
+      --pad-header                                                 \
+        src/pinetime-mcuboot-app-$PT_MAJOR.$PT_MINOR.$PT_PATCH.bin \
+        src/image-$PT_MAJOR.$PT_MINOR.$PT_PATCH.bin
+    adafruit-nrfutil                                   \
+      dfu                                              \
+      genpkg                                           \
+      --dev-type 0x0052                                \
+      --application                                    \
+        src/image-$PT_MAJOR.$PT_MINOR.$PT_PATCH.bin    \
+        src/dfu-$PT_MAJOR.$PT_MINOR.$PT_PATCH.zip
   cd $ROOT
 }
 
