@@ -1,0 +1,3 @@
+[submodule "Pinetime"]
+	path = Pinetime
+	url = git@github.com:JF002/Pinetime.git
