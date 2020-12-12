@@ -1,1 +1,4 @@
 .vagrant/**
+
+gcc-arm-none-eabi-*.tar.bz2
+nRF5_SDK_*.zip
