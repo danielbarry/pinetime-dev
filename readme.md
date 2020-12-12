@@ -22,3 +22,12 @@ Login to the virtual machine and build:
     cd dev
     bash build.sh clean
     bash build.sh build
+
+Your built images should now be in `Pinetime/build/src/`.
+
+# Notes
+
+## Updating Version
+
+You'll need to update the version number in `Pinetime/CMakeLists.txt` and
+`build.sh` (the top of both files).
