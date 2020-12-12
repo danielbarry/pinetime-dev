@@ -14,11 +14,22 @@ sudo apt-get -y upgrade
 
 # Install required programs
 sudo apt-get -y install \
+  build-essential       \
   cmake                 \
   git                   \
+  make                  \
+  python3               \
+  python3-pip           \
   wget                  \
   unzip                 \
   vim
+
+# Install MCU boot
+git clone https://github.com/JuulLabs-OSS/mcuboot.git /opt/mcuboot && \
+  pip3 install -r /opt/mcuboot/scripts/requirements.txt
+
+# Install DFU tool
+pip3 install adafruit-nrfutil
 
 # Remove unwanted package manger files
 sudo apt-get -y autoclean
