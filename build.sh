@@ -2,6 +2,15 @@ ROOT="$(pwd)"
 
 source var.sh
 
+# build()
+#
+# Build the project.
+function build() {
+  cd Pinetime/build
+    make -j 2
+  cd $ROOT
+}
+
 # clean()
 #
 # Clean the build and setup.
@@ -29,16 +38,9 @@ function help() {
   echo ""
   echo "  ComManD"
   echo ""
+  echo "    build  Make the project"
   echo "    clean  Clean the build files"
   echo "    help   Display this help"
-  echo "    make   Make the project"
-}
-
-# build()
-#
-# Build the project.
-function build() {
-  make -j 2
 }
 
 # main()
@@ -48,14 +50,14 @@ function build() {
 # $1 The command to be run.
 function main() {
   case $1 in
+    build)
+      build
+      ;;
     clean)
       clean
       ;;
     help)
       help
-      ;;
-    make)
-      build
       ;;
     *)
       help
