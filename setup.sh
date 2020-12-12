@@ -1,5 +1,9 @@
 #!/bin/bash
 
+PT_MAJOR="0"
+PT_MINOR="9"
+PT_PATCH="0"
+
 COMP_URL="https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2020q2/gcc-arm-none-eabi-9-2020-q2-update-x86_64-linux.tar.bz2?revision=05382cca-1721-44e1-ae19-1e7c3dc96118&la=en&hash=D7C9D18FCA2DD9F894FD9F3C3DC9228498FA281A"
 COMP_FILE="gcc-arm-none-eabi-9-2020-q2-update-x86_64-linux.tar.bz2"
 COMP_DIR="gcc-arm-none-eabi-9-2020-q2-update"
@@ -56,5 +60,8 @@ fi
 # Produce script with variables
 rm var.sh
 echo "#!/bin/bash"               >> var.sh
+echo "PT_MAJOR=$PT_MAJOR"        >> var.sh
+echo "PT_MINOR=$PT_MINOR"        >> var.sh
+echo "PT_PATCH=$PT_PATCH"        >> var.sh
 echo "LOC_COMP=$(pwd)/$COMP_DIR" >> var.sh
 echo "LOC_SDK=$(pwd)/$SDK_DIR"   >> var.sh
