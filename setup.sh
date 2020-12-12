@@ -42,6 +42,6 @@ fi
 
 # Produce script with variables
 rm var.sh
-echo "#!/bin/bash" >> var.sh
+echo "#!/bin/bash"               >> var.sh
 echo "LOC_COMP=$(pwd)/$COMP_DIR" >> var.sh
-echo "LOC_SDK=$(pwd)/$SDK_DIR" >> var.sh
+echo "LOC_SDK=$(pwd)/$SDK_DIR"   >> var.sh
