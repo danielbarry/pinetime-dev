@@ -17,6 +17,7 @@ sudo apt-get -y install \
   cmake                 \
   git                   \
   wget                  \
+  unzip                 \
   vim
 
 # Remove unwanted package manger files
