@@ -29,6 +29,7 @@ if [ -f "$COMP_FILE" ]; then
 else
   echo "$COMP_FILE does not exist, downloading"
   wget -O "$COMP_FILE" "$COMP_URL"
+  tar -xf "$COMP_FILE"
 fi
 
 # Grab SDK if needed
