@@ -1,4 +1,10 @@
 .vagrant/**
 
+*.swp
+
+# Auto-generated
+gcc-arm-none-eabi-*/**
 gcc-arm-none-eabi-*.tar.bz2
+nRF5_SDK_*/**
 nRF5_SDK_*.zip
+var.sh
