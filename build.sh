@@ -35,8 +35,16 @@ function clean() {
     rm -rf build
     mkdir build
     cd build
+    # TODO: Disabled the following because of errors:
+    # * expansion-to-defined
+    # * unused-parameter
+    # * implicit-fallthrough
+    # * type-limits
+    # * cast-function-type
+    # * missing-field-initializers
     cmake                                      \
       -DCMAKE_BUILD_TYPE=Release               \
+      -DCMAKE_CXX_FLAGS="-Werror -Wall -Wextra -Wno-error=expansion-to-defined -Wno-error=unused-parameter -Wno-error=implicit-fallthrough -Wno-error=type-limits -Wno-error=cast-function-type -Wno-error=missing-field-initializers" \
       -DARM_NONE_EABI_TOOLCHAIN_PATH=$LOC_COMP \
       -DNRF5_SDK_PATH=$LOC_SDK                 \
       -DUSE_GDB_CLIENT=0                       \
